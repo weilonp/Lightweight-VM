@@ -1,4 +1,7 @@
 # Lightweight-VM
+
+***IMPORTANT: the key file vm_schedule.c is removed from the folder, only authorized accounts will be able to view vm_schedule.c
+
 KAIA-VM is a lightweight process-level virtual machine that allows users to run Linux programs with custom execution techniques. These machines are useful for testing complicated interactions between processes (programs being run) by manually scheduling them in certain orders, or allow the user to run processes with custom priority orderings.
 
 
