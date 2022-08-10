@@ -1,0 +1,55 @@
+#-----------------------------------------------------------------------------
+# Makefile
+#-----------------------------------------------------------------------------
+
+#-----------------------------------------------------------------------------
+# Choose a compiler and its options
+#--------------------------------------------------------------------------
+CC   = gcc -std=gnu99	# Use gcc for Zeus
+OPTS = -Og -Wall -Werror -Wno-error=unused-variable -Wno-error=unused-function
+DEBUG = -g					# -g for GDB debugging
+
+#--------------------------------------------------------------------
+# Build Environment
+#--------------------------------------------------------------------
+SRCDIR=./src
+OBJDIR=./obj
+INCDIR=./inc
+BINDIR=.
+
+#--------------------------------------------------------------------
+# Build Files
+#--------------------------------------------------------------------
+
+#--------------------------------------------------------------------
+# Compiler Options
+#--------------------------------------------------------------------
+INCLUDE=$(addprefix -I,$(INCDIR))
+CFLAGS=$(OPTS) $(INCLUDE) $(DEBUG)
+
+#--------------------------------------------------------------------
+# Build Recipes for the Executables (binary)
+#--------------------------------------------------------------------
+TARGETS = $(BINDIR)/slow_cooker $(BINDIR)/slow_printer $(BINDIR)/slow_hat
+
+all: $(TARGETS) 
+
+# Links the object files to create the target binary
+$(BINDIR)/slow_cooker: $(OBJDIR)/slow_cooker.o
+	${CC} ${CFLAGS} -o $@ $^
+
+$(BINDIR)/slow_printer: $(OBJDIR)/slow_printer.o
+	${CC} ${CFLAGS} -o $@ $^
+
+$(BINDIR)/slow_hat: $(OBJDIR)/slow_hat.o
+	${CC} ${CFLAGS} -o $@ $^
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	${CC} $(CFLAGS) -c -o $@ $<
+
+#--------------------------------------------------------------------
+# Cleans the binaries
+#--------------------------------------------------------------------
+clean:
+	rm -f $(TARGETS)
+
