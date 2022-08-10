@@ -2,7 +2,7 @@
 
 ***IMPORTANT: the key file vm_schedule.c is removed from the folder, only authorized accounts will be able to view vm_schedule.c
 
-This is a lightweight process-level virtual machine that allows Linux programs to run with custom execution commands. These machines are useful for testing complicated interactions between processes (programs being run) by manually scheduling them in certain orders, or allow the user to run processes with custom priority orderings.
+This is a lightweight process-level virtual machine (written in C) that allows Linux programs to run with custom execution commands. These machines are useful for testing complicated interactions between processes (programs being run) by manually scheduling them in certain orders, or allow the user to run processes with custom priority orderings.
 
 
 To run the program:
