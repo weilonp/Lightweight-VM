@@ -6,13 +6,17 @@ This is a lightweight process-level virtual machine (written in C) that allows L
 
 
 To run the program:
-type in ./vm in the command line
+type in 'make' and then './vm' in the command line
 
 Built-In Commands to Control the CS Engine
 • start - This will start the CS Engine running.
+
 • stop - This will stop the CS Engine running. (You can start and stop it as much as you want!)
+
 • status - This will print out a status message about the CS Engine settings and if it’s running.
+
 • runtime X - This will change the runtime to a new usec value. (Default 250000 usec)
+
 • delaytime X - This will change the delaytime to a new usec value. (Default 1000000 usec)
 
 Example run:
